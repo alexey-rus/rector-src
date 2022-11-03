@@ -1,0 +1,25 @@
+<?php
+
+namespace Rector\Tests\Php81\Rector\Array_\FirstClassCallableRector\Fixture;
+
+final class DemoFile
+{
+    public function provideListenerPriority(): array
+    {          
+         return [
+             'listener' => [
+                 [SessionListener::class, 'onKernelRequest'],
+             ],       
+         ];
+    }
+}
+namespace Rector\Tests\Php81\Rector\Array_\FirstClassCallableRector\Fixture;
+
+class SessionListener
+{
+    public function onKernelRequest(RequestEvent $event)
+    {  
+    }
+}
+
+?>
